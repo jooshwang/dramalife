@@ -5,7 +5,7 @@
 
 .mainSliderArea {width: 100%; max-width: 1920px;  position: relative;}
 .mainSliderArea .swiper-container {width: 100%; max-width:1920px; height: 738px; }
-.mainSliderArea .swiper-container .swiper-wrapper .swiper-slide {width: 100%; max-width: 1920px; height: 100vh; background-size: cover;background-repeat: no-repeat; background-position: center center;}
+.mainSliderArea .swiper-container .swiper-wrapper .swiper-slide {width: 100%; max-width: 1920px; background-size: cover;background-repeat: no-repeat; background-position: center center;}
 .mainSliderArea .swiper-container .swiper-wrapper .swiper-slide:nth-child(1) {background-color: #bcddef;  background-image: url(../images/exSlider1.png);}
 .mainSliderArea .swiper-container .swiper-wrapper .swiper-slide:nth-child(2) {background-color: #eacfb9;  background-image: url(../images/exSlider2.png);}
 .mainSliderArea .swiper-container .swiper-wrapper .swiper-slide:nth-child(3) {background-color: #f9c8c0;  background-image: url(../images/exSlider3.png);}
