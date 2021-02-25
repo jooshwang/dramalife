@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
+    <style>
+       .mainArea .bx-wrapper{box-shadow: none; border: none; background-color: red;}
+    </style>
+    <style>
+      *{margin: 0;padding: 0; list-style: none;}
+      ul{display: flex;}
+      .mainArea li{flex: 1; border: 1px solid; text-align: center;}
+      .mainArea li.active{background-color: red;}
+      .subArea{display: block;}
+      .subArea li{display: none; height: 100px;}
+      .subArea li:nth-child(1){background-color: salmon;}
+      .subArea li:nth-child(2){background-color: red;}
+      .subArea li:nth-child(3){background-color: yellow;}
+      .subArea li:nth-child(4){background-color: green;}
+      .subArea li:nth-child(5){background-color: rebeccapurple;}
+
+      .subArea li.active{display: block;}
+
+    </style>
+    <script>
+        $(document).ready(function(){ // 익명함수 , 콜백함수
+            var test = $('.mainArea li'); //.mainArea li 를 test라는 변수로 지정
+            test.click(function(){ //(.mainArea li)의 변수 test를 클릭하면
+                test.removeClass('active'); //일단 모든 (.mainArea li)의 변수 test의 li를 제거하고,
+                $(this).addClass('active'); //this 이것에만  active클래스를 추가해라
+                // addClass 클래스 추가
+                // removeClass 클래스 제거
+                // hasClass 클래스 여부
+                console.log($(this).attr('rel')); //consloe.log로 찍어보면 this의 값이 rel 값으로 나타난다.
+                $('.subArea li').removeClass('active'); //.subArea li active를 제거해라??이거 왜 제거하죠?
+                $('#' + $(this).attr('rel')).addClass('active');// 아이디 this이것의 rel값을 active클래스로 추가해라
+                // #tab01
+
+                
+            })
+        });
+    </script>
+</head>
+<body>
+    <ul class="mainArea">
+        <li class="active" rel="tab01">1</li>
+        <li rel="tab02">2</li>
+        <li rel="tab03">3</li>
+        <li rel="tab04">4</li>
+        <li rel="tab05">5</li>
+    </ul>
+    <ul class="subArea">
+        <li class="active" id="tab01">본문1</li>
+        <li id="tab02">본문2</li>
+        <li id="tab03">본문3</li>
+        <li id="tab04">본문4</li>
+        <li id="tab05">본문5</li>
+    </ul>
+</body>
+</html>
